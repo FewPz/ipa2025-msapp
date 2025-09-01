@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/FewPz/ipa2025-msapp'
     targetRevision: HEAD
-    path: manifests/
+    path: web/manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: ipa2025
