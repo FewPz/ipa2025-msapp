@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipa2025-msapp-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ipa2025-msapp-web
+  template:
+    metadata:
+      labels:
+        app: ipa2025-msapp-web
+    spec:
+      containers:
+        - name: ipa2025-msapp-web
+          image: fewza49144/web:latest
+          ports:
+            - containerPort: 80
+          envFrom:
+            - secretRef:
+                name: s-5d2lw
