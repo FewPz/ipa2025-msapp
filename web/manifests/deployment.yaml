@@ -17,7 +17,7 @@ spec:
         - name: ipa2025-msapp-web
           image: fewza49144/web:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           envFrom:
             - secretRef:
                 name: s-5d2lw
