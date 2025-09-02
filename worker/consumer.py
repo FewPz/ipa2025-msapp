@@ -19,6 +19,9 @@ def consume(host):
             break
         except Exception as e:
             print(f"Failed: {e}")
+            print(f"User: {user}")
+            print(f"Password: {pwd}")
+            print(f"Host: {host}")
             time.sleep(5)
     else:
         print("Could not connect after 10 attempts")
