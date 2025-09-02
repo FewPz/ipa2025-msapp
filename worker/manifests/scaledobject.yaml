@@ -1,0 +1,21 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: ipa2025-msapp-worker-scaler
+  namespace: ipa2025
+spec:
+  scaleTargetRef:
+    name: ipa2025-msapp-worker
+  pollingInterval: 15
+  cooldownPeriod: 120
+  minReplicaCount: 5
+  maxReplicaCount: 15
+  triggers:
+    - type: rabbitmq
+      metadata:
+        queueName: router_jobs
+        mode: QueueLength
+        queueLength: "10"
+        protocol: amqp
+      authenticationRef:
+        name: rabbit-auth

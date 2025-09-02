@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipa2025-msapp-worker
+  namespace: ipa2025
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ipa2025-msapp-worker
+  template:
+    metadata:
+      labels:
+        app: ipa2025-msapp-worker
+    spec:
+      containers:
+        - name: worker
+          image: fewza49144/worker:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: s-5d2lw
