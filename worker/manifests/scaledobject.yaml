@@ -8,15 +8,17 @@ spec:
     name: ipa2025-msapp-worker
   pollingInterval: 15
   cooldownPeriod: 120
-  minReplicaCount: 5
-  maxReplicaCount: 15
+  minReplicaCount: 1
+  maxReplicaCount: 10
   triggers:
     - type: rabbitmq
       metadata:
         queueName: router_jobs
         mode: QueueLength
         value: "10"
-        protocol: amqp
+        protocol: auto
         hostFromEnv: RABBITMQ_HOST # Optional. You can use this instead of `host` parameter
         usernameFromEnv: RABBITMQ_DEFAULT_USER # Optional. You can use this instead of TriggerAuthentication
         passwordFromEnv: RABBITMQ_DEFAULT_PASS # Optional. You can use this instead of TriggerAuthentication
+      authenticationRef:
+        name: rabbit-auth
