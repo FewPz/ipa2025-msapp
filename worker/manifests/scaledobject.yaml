@@ -17,5 +17,4 @@ spec:
         mode: QueueLength
         queueLength: "10"
         protocol: amqp
-      authenticationRef:
-        name: rabbit-auth
+        hostFromEnv: RABBITMQ_URI
