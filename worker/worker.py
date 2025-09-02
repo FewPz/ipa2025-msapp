@@ -1,3 +1,5 @@
 from consumer import consume
+import os
 
-consume("rabbitmq")
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST")
+consume(RABBITMQ_HOST)
