@@ -5,7 +5,7 @@ metadata:
   namespace: ipa2025
 spec:
   scaleTargetRef:
-    name: ipa2025-msapp-worker    # ← ต้องตรงกับ Deployment.metadata.name
+    name: ipa2025-msapp-worker
   pollingInterval: 15
   cooldownPeriod: 120
   minReplicaCount: 5

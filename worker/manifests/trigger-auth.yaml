@@ -5,6 +5,6 @@ metadata:
   namespace: ipa2025
 spec:
   secretTargetRef:
-    - parameter: connection
+    - parameter: host
       name: rabbitmq-conn         # secret นี้ต้องมี key: RABBITMQ_URI
       key: RABBITMQ_URI
