@@ -16,7 +16,6 @@ spec:
       containers:
         - name: ipa2025-msapp-scheduler
           image: fewza49144/scheduler:latest
-          imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
                 name: s-5d2lw
