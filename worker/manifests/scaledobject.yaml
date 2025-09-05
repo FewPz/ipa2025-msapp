@@ -6,7 +6,7 @@ metadata:
 spec:
   scaleTargetRef:
     name: ipa2025-msapp-worker
-  pollingInterval: 15
+  pollingInterval: 5
   cooldownPeriod: 120
   minReplicaCount: 1
   maxReplicaCount: 10
@@ -15,7 +15,7 @@ spec:
       metadata:
         queueName: router_jobs
         mode: QueueLength
-        value: "10"
+        value: "5"
         protocol: auto
         hostFromEnv: RABBITMQ_HOST # Optional. You can use this instead of `host` parameter
         usernameFromEnv: RABBITMQ_DEFAULT_USER # Optional. You can use this instead of TriggerAuthentication
